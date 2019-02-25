@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlueWatersImmigration</title>
+    <title>Blue Waters Immigration</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/nav' %>
+    <div class="container">     
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>    
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>

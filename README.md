@@ -12,12 +12,13 @@
 		- user.id
 		- can't be edited by other users, from mack app
 	- User(devise) using STI roles
-		- creates an account
-		- goes to user area
+		- signs up
+		- after sign up route to their dashboard
 		- finds form
 		- fills out form
 		- submits form
 		- waits for approval
+		- email once approved/unapproved until it is pending
 	- Admin(devise) using STI roles
 		- created by rails console
 		- logs in goes to a dashboard
@@ -73,3 +74,8 @@
 - [using sti](https://vsmedia.co.uk/single-table-inheritance-sti-devise/)
 - STI from jordan professional rails
 - simple search like in admin blog site
+
+## Todos
+
+- add 'active' class to bootstrap nav, jordan shows how
+- growl notifications
