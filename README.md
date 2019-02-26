@@ -39,16 +39,17 @@
 ## Modeling our data
 
 - n400 form, migrations to add new steps
-- User/admin/manager
+- User/admin/manager - STI or petergate
 
 ## Pages
 
 1. User section
-	- Welcome landing page
-	- About
-	- Contact
-	- Login
-	- Edit profile
+	x Welcome landing page
+	x About
+	x Contact
+	x Login routes to user dashboard
+	x Edit profile
+	- user dashboard
 	- N400 form CRUD
 
 2. Admin section
