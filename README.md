@@ -49,7 +49,7 @@
 	x Contact
 	x Login routes to user dashboard
 	x Edit profile
-	- user dashboard
+	x user dashboard
 	- N400 form CRUD
 
 2. Admin section
