@@ -11,6 +11,7 @@
 		- will have pending/apprvoed/unapproved status
 		- user.id
 		- can't be edited by other users, from mack app
+		- validations
 	- User(devise) using STI roles
 		- signs up
 		- after sign up route to their dashboard
@@ -80,3 +81,8 @@
 
 - add 'active' class to bootstrap nav, jordan shows how
 - growl notifications
+- field offices CRUD only admin/manager authentication
+
+
+
+

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :field_offices
+  resources :n400_forms
   get '/dashboard', to: 'dashboard#index'
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
