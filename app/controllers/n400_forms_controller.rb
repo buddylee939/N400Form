@@ -68,6 +68,15 @@ class N400FormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def n400_form_params
-      params.require(:n400_form).permit(:eligibility, :other_explain, :field_office_id, :nine_digit_a_number)
+      params.require(:n400_form).permit(
+        :eligibility, :other_explain, :field_office_id, :nine_digit_a_number,
+        :legal_last_name, :legal_first_name, :legal_middle_name,:resident_last_name,
+        :resident_first_name, :resident_middle_name, :name_change, :new_last_name,
+        :new_first_name, :new_middle_name, :social_security_num, :uscis_num, :gender,
+        :date_of_birth, :date_of_residency, :country_of_birth, :country_of_citizendship, 
+        :physical_disability, :years_or_older_50, :years_or_older_55, :years_or_older_65 
+      )
     end
 end
+
+

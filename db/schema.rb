@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_001738) do
+ActiveRecord::Schema.define(version: 2019_02_27_012325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,27 @@ ActiveRecord::Schema.define(version: 2019_02_27_001738) do
     t.integer "other_explain"
     t.integer "field_office_id"
     t.integer "nine_digit_a_number"
+    t.string "legal_last_name"
+    t.string "legal_first_name"
+    t.string "legal_middle_name"
+    t.string "resident_last_name"
+    t.string "resident_first_name"
+    t.string "resident_middle_name"
+    t.integer "name_change"
+    t.string "new_last_name"
+    t.string "new_first_name"
+    t.string "new_middle_name"
+    t.integer "social_security_num"
+    t.string "uscis_num"
+    t.integer "gender"
+    t.date "date_of_birth"
+    t.date "date_of_residency"
+    t.string "country_of_birth"
+    t.string "country_of_citizendship"
+    t.integer "physical_disability"
+    t.integer "years_or_older_50"
+    t.integer "years_or_older_55"
+    t.integer "years_or_older_65"
   end
 
   create_table "users", force: :cascade do |t|

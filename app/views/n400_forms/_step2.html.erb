@@ -1,0 +1,30 @@
+
+<%= f.input :legal_last_name %>
+<%= f.input :legal_first_name %>
+<%= f.input :legal_middle_name %>
+<%= f.input :resident_last_name %>
+<%= f.input :resident_first_name %>
+<%= f.input :resident_middle_name %>
+<%= f.input :name_change, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
+<%= f.input :new_last_name %>
+<%= f.input :new_first_name %>
+<%= f.input :new_middle_name %>
+<%= f.input :social_security_num %>
+<%= f.input :uscis_num %>
+<%= f.input :gender, as: :radio_buttons, collection: [['0', 'Female'], ['1', 'Male']], label_method: :second, value_method: :first %>
+<%#= f.input :gender, as: :radio_buttons %>
+<%= f.input :date_of_birth, start_year: Date.today.year - 100,
+                              end_year: Date.today.year %>
+<%= f.input :date_of_residency, start_year: Date.today.year - 40,
+                              end_year: Date.today.year %>
+<p>Country of Birth</p>
+<%= f.country_select :country_of_birth,  
+	include_blank: "Please select a Country" %>
+<p>Country of Citizenship or Nationality</p>
+<%= f.country_select :country_of_citizendship,  
+	include_blank: "Please select a Country" %>
+<%= f.input :physical_disability, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
+<%= f.input :years_or_older_50, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
+<%= f.input :years_or_older_55, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
+<%= f.input :years_or_older_65, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
+
