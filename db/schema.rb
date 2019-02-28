@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_012325) do
+ActiveRecord::Schema.define(version: 2019_02_27_055511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(version: 2019_02_27_012325) do
     t.integer "years_or_older_50"
     t.integer "years_or_older_55"
     t.integer "years_or_older_65"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_n400_forms_on_user_id"
+  end
+
+  create_table "other_names", force: :cascade do |t|
+    t.string "family_name"
+    t.string "given_name"
+    t.string "middle_name"
+    t.bigint "n400_form_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["n400_form_id"], name: "index_other_names_on_n400_form_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,4 +83,6 @@ ActiveRecord::Schema.define(version: 2019_02_27_012325) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "n400_forms", "users"
+  add_foreign_key "other_names", "n400_forms"
 end

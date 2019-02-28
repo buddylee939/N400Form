@@ -11,7 +11,7 @@
 
 <%= f.input :field_office_id, collection: FieldOffice.all, 
 	label_method: :state_and_name, value_method: :id,label: "Field Office", 
-	include_blank: "Please select a Field Office", selected: @n400_form.field_office_id %>
+	include_blank: "Please select a Field Office", selected: @n400_form.field_office_id, wrapper_html: { id: 'field-office' } %>
 
 <%= f.input :other_explain, collection: [
 	['0', 'RELIGIOUS DUTIES'],

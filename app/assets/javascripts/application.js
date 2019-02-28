@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require rails-ujs
+//= require cocoon
 //= require bootstrap-sprockets
 //= require formToWizard
+//= require n400
 //= require main
 //= require activestorage
 // require turbolinks

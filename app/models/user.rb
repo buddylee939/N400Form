@@ -7,4 +7,5 @@ class User < ApplicationRecord
   def username
     email.split('@')[0]
   end
+  has_one :n400_form, dependent: :destroy
 end

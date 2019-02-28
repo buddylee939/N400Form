@@ -1,18 +1,33 @@
-
+<p>1. Your Current Legal Name (do not provide a nickname)</p>
 <%= f.input :legal_last_name %>
 <%= f.input :legal_first_name %>
 <%= f.input :legal_middle_name %>
+<p>2. Your Name Exactly As It Appears on Your Permanent Resident Card (if applicable)</p>
 <%= f.input :resident_last_name %>
 <%= f.input :resident_first_name %>
 <%= f.input :resident_middle_name %>
+<p>3. Other Names You Have Used Since Birth (include nicknames, aliases, and maiden name, if applicable)</p>
+<h3>Other Names</h3>
+<div id="other_names">
+	<%= f.simple_fields_for :other_names do |other_name| %>
+		<%=  render 'other_name_fields', f: other_name %>
+	<% end %>
+	<div class="links">
+		<%= link_to_add_association 'add other name', f, :other_names %>
+	</div>
+</div>
+
+<p>4. Name Change (Optional)</p>
 <%= f.input :name_change, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
-<%= f.input :new_last_name %>
-<%= f.input :new_first_name %>
-<%= f.input :new_middle_name %>
+<div id="name-change-fields">
+	<%= f.input :new_last_name %>
+	<%= f.input :new_first_name %>
+	<%= f.input :new_middle_name %>	
+</div>
+
 <%= f.input :social_security_num %>
 <%= f.input :uscis_num %>
 <%= f.input :gender, as: :radio_buttons, collection: [['0', 'Female'], ['1', 'Male']], label_method: :second, value_method: :first %>
-<%#= f.input :gender, as: :radio_buttons %>
 <%= f.input :date_of_birth, start_year: Date.today.year - 100,
                               end_year: Date.today.year %>
 <%= f.input :date_of_residency, start_year: Date.today.year - 40,
@@ -24,6 +39,7 @@
 <%= f.country_select :country_of_citizendship,  
 	include_blank: "Please select a Country" %>
 <%= f.input :physical_disability, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
+<p>If you answered "Yes," submit a completed Form N-648, Medical Certification for Disability Exceptions, when you file your Form N-400.</p>
 <%= f.input :years_or_older_50, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
 <%= f.input :years_or_older_55, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
 <%= f.input :years_or_older_65, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>

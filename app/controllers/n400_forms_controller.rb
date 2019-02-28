@@ -25,6 +25,7 @@ class N400FormsController < ApplicationController
   # POST /n400_forms.json
   def create
     @n400_form = N400Form.new(n400_form_params)
+    @n400_form.user_id = current_user.id
     respond_to do |format|
       if @n400_form.save
         format.html { redirect_to @n400_form, notice: 'N400 form was successfully created.' }
@@ -74,9 +75,8 @@ class N400FormsController < ApplicationController
         :resident_first_name, :resident_middle_name, :name_change, :new_last_name,
         :new_first_name, :new_middle_name, :social_security_num, :uscis_num, :gender,
         :date_of_birth, :date_of_residency, :country_of_birth, :country_of_citizendship, 
-        :physical_disability, :years_or_older_50, :years_or_older_55, :years_or_older_65 
+        :physical_disability, :years_or_older_50, :years_or_older_55, :years_or_older_65,
+        other_names_attributes: [:id, :family_name, :given_name, :middle_name, :_destroy] 
       )
     end
 end
-
-
