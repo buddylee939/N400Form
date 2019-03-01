@@ -1,0 +1,40 @@
+<p>A. Current Physical Address</p>
+<%= f.input :physical_address_street_1 %>
+<%= f.input :physical_address_street_2 %>
+<%= f.input :physical_address_city %>
+<%= f.input :physical_address_county %>
+<%= f.input :physical_address_state %>
+<%= f.input :physical_address_zip %>
+<%= f.input :physical_address__plus_4 %>
+<%= f.input :physical_address_province %>
+<%= f.input :physical_address_postal %>
+<%= f.country_select :physical_address_country,  
+	include_blank: "Please select a Country" %>
+<%= f.input :physical_address_date_from, start_year: Date.today.year - 100,
+                              end_year: Date.today.year %>
+<%= f.input :physical_address_date_to, start_year: Date.today.year - 10,
+                              end_year: Date.today.year %>
+
+<hr>
+
+<p>B. Current Mailing Address (if different from the address above)</p>
+<%= f.input :mailing_physical_address, label: "Same as physical address", input_html: { class: 'physical-address'} %>
+<fieldset id="address-fieldset">	
+	<%= f.input :mailing_address_street_1 %>
+	<%= f.input :mailing_address_street_2 %>
+	<%= f.input :mailing_address_city %>
+	<%= f.input :mailing_address_county %>
+	<%= f.input :mailing_address_state %>
+	<%= f.input :mailing_address_zip %>
+	<%= f.input :mailing_address__plus_4 %>
+	<%= f.input :mailing_address_province %>
+	<%= f.input :mailing_address_postal %>
+	<%= f.country_select :mailing_address_country,  
+		include_blank: "Please select a Country" %>
+	<%= f.input :mailing_address_date_from, start_year: Date.today.year - 100,
+	                              end_year: Date.today.year %>
+	<%= f.input :mailing_address_date_to, start_year: Date.today.year - 10,
+	                              end_year: Date.today.year %>
+</fieldset>
+
+<hr>

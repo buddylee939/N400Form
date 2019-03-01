@@ -79,8 +79,12 @@ class N400FormsController < ApplicationController
         :disability_accomodation, :hard_of_hearing, :hard_of_hearing_reason, :low_vision,
         :low_vision_reason, :another_disability, :another_disability_reason,
         :phone_day, :phone_work, :phone_evening, :phone_mobile, :email_address,
+        :physical_address_street_1, :physical_address_street_2, :physical_address_city,
+        :physical_address_county, :physical_address_state, :physical_address_zip,
+        :physical_address__plus_4, :physical_address_province, :physical_address_postal,
+        :physical_address_country, :physical_address_date_from, :physical_address_date_to,
+        :mailing_physical_address,
         other_names_attributes: [:id, :family_name, :given_name, :middle_name, :_destroy] 
       )
     end
 end
-

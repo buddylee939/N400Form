@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_073013) do
+ActiveRecord::Schema.define(version: 2019_03_01_082529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,31 @@ ActiveRecord::Schema.define(version: 2019_03_01_073013) do
     t.string "phone_evening"
     t.string "phone_mobile"
     t.string "email_address"
+    t.string "physical_address_street_1"
+    t.string "physical_address_street_2"
+    t.string "physical_address_city"
+    t.string "physical_address_county"
+    t.string "physical_address_state"
+    t.string "physical_address_zip"
+    t.string "physical_address__plus_4"
+    t.string "physical_address_province"
+    t.string "physical_address_postal"
+    t.string "physical_address_country"
+    t.date "physical_address_date_from"
+    t.date "physical_address_date_to"
+    t.string "mailing_address_street_1"
+    t.string "mailing_address_street_2"
+    t.string "mailing_address_city"
+    t.string "mailing_address_county"
+    t.string "mailing_address_state"
+    t.string "mailing_address_zip"
+    t.string "mailing_address__plus_4"
+    t.string "mailing_address_province"
+    t.string "mailing_address_postal"
+    t.string "mailing_address_country"
+    t.date "mailing_address_date_from"
+    t.date "mailing_address_date_to"
+    t.boolean "mailing_physical_address"
     t.index ["user_id"], name: "index_n400_forms_on_user_id"
   end
 

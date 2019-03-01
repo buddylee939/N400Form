@@ -69,3 +69,18 @@ $( document ).ready(function(){
 	});
 });
 
+$(document).ready(function() { 
+	if ($('.physical-address').is(":checked")) {
+		$('#address-fieldset').prop('disabled', true);
+	} else {
+		$('#address-fieldset').prop('disabled', false);
+	}
+
+	$('.physical-address').change(function() {
+		if ($('.physical-address').is(":checked")) {
+			$('#address-fieldset').prop('disabled', true);
+		} else {
+			$('#address-fieldset').prop('disabled', false);
+		}		
+	});
+});
