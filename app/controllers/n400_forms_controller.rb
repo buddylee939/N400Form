@@ -76,7 +76,10 @@ class N400FormsController < ApplicationController
         :new_first_name, :new_middle_name, :social_security_num, :uscis_num, :gender,
         :date_of_birth, :date_of_residency, :country_of_birth, :country_of_citizendship, 
         :physical_disability, :years_or_older_50, :years_or_older_55, :years_or_older_65,
+        :disability_accomodation, :hard_of_hearing, :hard_of_hearing_reason, :low_vision,
+        :low_vision_reason, :another_disability, :another_disability_reason,
         other_names_attributes: [:id, :family_name, :given_name, :middle_name, :_destroy] 
       )
     end
 end
+

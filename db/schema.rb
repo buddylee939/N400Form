@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_055511) do
+ActiveRecord::Schema.define(version: 2019_03_01_065255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 2019_02_27_055511) do
     t.integer "years_or_older_55"
     t.integer "years_or_older_65"
     t.bigint "user_id"
+    t.integer "disability_accomodation"
+    t.boolean "hard_of_hearing"
+    t.string "hard_of_hearing_reason"
+    t.boolean "low_vision"
+    t.string "low_vision_reason"
+    t.boolean "another_disability"
+    t.string "another_disability_reason"
     t.index ["user_id"], name: "index_n400_forms_on_user_id"
   end
 

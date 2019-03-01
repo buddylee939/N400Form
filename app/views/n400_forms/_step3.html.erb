@@ -1,0 +1,14 @@
+<p>1. Are you requesting an accommodation because of your disabilities and/or impairments?</p>
+<%= f.input :disability_accomodation, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
+
+<div id="disability-accomodations">	
+	<p>If you answered "Yes," select any applicable box.</p>
+	<%= f.input :hard_of_hearing, label: 'I am deaf or hard of hearing and request the following accommodation. (If you are requesting a sign-language interpreter, indicate for which language (for example, American Sign Language).)' %>
+	<%= f.input :hard_of_hearing_reason %>
+	<%= f.input :low_vision, label: 'I am blind or have low vision and request the following accommodation:' %>
+	<%= f.input :low_vision_reason %>
+	<%= f.input :another_disability, label: 'I have another type of disability and/or impairment (for example, use a wheelchair). (Describe the nature of your disability and/or impairment and the accommodation you are requesting.)' %>
+	<%= f.input :another_disability_reason %>
+</div>
+
+
