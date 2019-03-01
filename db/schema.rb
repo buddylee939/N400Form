@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_065255) do
+ActiveRecord::Schema.define(version: 2019_03_01_073013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,11 @@ ActiveRecord::Schema.define(version: 2019_03_01_065255) do
     t.string "low_vision_reason"
     t.boolean "another_disability"
     t.string "another_disability_reason"
+    t.string "phone_day"
+    t.string "phone_work"
+    t.string "phone_evening"
+    t.string "phone_mobile"
+    t.string "email_address"
     t.index ["user_id"], name: "index_n400_forms_on_user_id"
   end
 

@@ -78,6 +78,7 @@ class N400FormsController < ApplicationController
         :physical_disability, :years_or_older_50, :years_or_older_55, :years_or_older_65,
         :disability_accomodation, :hard_of_hearing, :hard_of_hearing_reason, :low_vision,
         :low_vision_reason, :another_disability, :another_disability_reason,
+        :phone_day, :phone_work, :phone_evening, :phone_mobile, :email_address,
         other_names_attributes: [:id, :family_name, :given_name, :middle_name, :_destroy] 
       )
     end
