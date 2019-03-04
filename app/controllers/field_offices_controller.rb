@@ -1,6 +1,6 @@
 class FieldOfficesController < ApplicationController
   before_action :set_field_office, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /field_offices
   # GET /field_offices.json
   def index

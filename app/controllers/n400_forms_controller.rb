@@ -1,6 +1,6 @@
 class N400FormsController < ApplicationController
   before_action :set_n400_form, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /n400_forms
   # GET /n400_forms.json
   def index

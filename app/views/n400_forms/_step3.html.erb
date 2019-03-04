@@ -1,5 +1,5 @@
 <p>1. Are you requesting an accommodation because of your disabilities and/or impairments?</p>
-<%= f.input :disability_accomodation, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %>
+<%= f.input :disability_accomodation, as: :radio_buttons, collection: N400Form::YES_OR_NO %>
 
 <div id="disability-accomodations">	
 	<p>If you answered "Yes," select any applicable box.</p>
