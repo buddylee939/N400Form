@@ -1,41 +1,53 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Blue Waters Immigration', root_path, class: 'navbar-brand' %>
-    </div>
+<!--=== Header v8 ===-->
+<div class="header-v8 header-sticky">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="<%= active?(root_path) %>">
-          <% if user_signed_in? %>
-            <%= link_to 'Dashboard', root_path %>
-          <% else %>
-            <%= link_to 'Home', root_path %>
+  <!-- Navbar -->
+  <div class="navbar mega-menu" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="res-container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <div class="navbar-brand">
+          <%= link_to root_path do %>
+            <%= image_tag "logo-default-102x74.png", alt: 'Blue Waters Immigration Logo' %>
           <% end %>
-        </li>
-        <li class="<%= active?(about_path) %>"><%= link_to 'About', about_path %></li>
-        <li class="<%= active?(contact_path) %>"><%= link_to 'Contact', contact_path %></li>
-        <li class="<%= active?(field_offices_path) %>"><%= link_to 'Field Offices', field_offices_path %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li class="<%= active?(edit_user_registration_path) %>">
-            <%= link_to current_user.username, edit_user_registration_path %>              
-          </li>
-          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li class="<%= active?(new_user_session_path) %>"><%= link_to 'Login', new_user_session_path %></li>
-          <li class="<%= active?(new_user_registration_path) %>"><%= link_to 'Sign Up', new_user_registration_path %></li>
-        <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+        </div>
+      </div><!--/end responsive container-->
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-responsive-collapse">
+        <div class="res-container">
+          <ul class="nav navbar-nav">
+            <li class="<%= active?(root_path) %>">
+              <% if user_signed_in? %>
+                <%= link_to 'Dashboard', root_path %>
+              <% else %>
+                <%= link_to 'Home', root_path %>
+              <% end %>
+            </li>
+            <li class="<%= active?(about_path) %>"><%= link_to 'About', about_path %></li>
+            <li class="<%= active?(contact_path) %>"><%= link_to 'Contact', contact_path %></li>
+            <li class="<%= active?(field_offices_path) %>"><%= link_to 'Field Offices', field_offices_path %></li>  
+            <% if user_signed_in? %>
+              <li class="<%= active?(edit_user_registration_path) %>">
+                <%= link_to current_user.username, edit_user_registration_path %>              
+              </li>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li class="<%= active?(new_user_session_path) %>"><%= link_to 'Login', new_user_session_path %></li>
+              <li class="<%= active?(new_user_registration_path) %>"><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <% end %>                  
+          </ul>
+        </div><!--/responsive container-->
+      </div><!--/navbar-collapse-->
+    </div><!--/end contaoner-->
+  </div>
+  <!-- End Navbar -->
+</div>
+<!--=== End Header v8 ===-->

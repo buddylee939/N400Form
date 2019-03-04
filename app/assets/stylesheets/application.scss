@@ -1,4 +1,82 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "n400_forms";
+// @import "gritter";
+@import "app";
+@import "blocks";
+@import "style";
+@import "header-v8";
+@import "footer-v8";
+@import "plugins/animate";
+// @import "plugins/line-icons/line-icons";
+@import "simple-line-icons";
+@import "plugins/parallax-slider/css/parallax-slider";
+@import "plugins/fancybox/source/jquery.fancybox";
+// @import "plugins/sky-forms-pro/skyforms/css/sky-forms";
+// @import "plugins/sky-forms-pro/skyforms/custom/custom-sky-forms";
+@import "default";
+@import "dark";
+@import "custom";
+@import "font-awesome";
 
+body.header-fixed-space {
+  padding-top: 94px;
+}
+body.header-fixed-space-v2 {
+	padding-top: 100px;
+}
+
+@media (max-width: 991px) {
+	body.header-fixed-space,
+	body.header-fixed-space-v2 {
+		padding-top: 0;
+	}
+}
+
+.header-v8 .navbar-brand {
+    height: 102px;
+    max-height: 102px;
+    line-height: 60px;
+}
+
+.interactive-slider-v2 h1 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 80px;
+    text-transform: uppercase;
+}
+
+.interactive-slider-v2 p {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 200;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+.footer-logo {
+	max-width: 100px;
+}
+
+.notice {
+  background: lightgreen;
+  padding: 15px;   
+  font-size: 15px; 
+}
+
+.alert {
+  background: tomato;
+  padding: 15px;    
+  color: white;
+  font-size: 15px;
+}
+
+.sky-form .row {
+    margin: 0 0;
+}
+
+.sky-form fieldsets {
+    display: block;
+    padding: 25px 30px 5px;
+    border: none;
+    background: rgba(255,255,255,.9);
+}

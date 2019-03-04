@@ -1,25 +1,57 @@
-<h2>Sign up</h2>
+<!--=== Content Part ===-->
+<div class="container content">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <!-- <form class="reg-page"> -->
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="reg-header">
+          <h2>Register a new account</h2>
+          <!-- <p>Already Signed Up? Click <a href="page_login.html" class="color-green">Sign In</a> to login your account.</p> -->
+          <p>Already Signed Up? Click <%= link_to 'Login', new_user_session_path, class: 'color-green' %> to login your account.</p>                
+        </div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+        <label>Email Address <span class="color-red">*</span></label>
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    label: false,
+                    input_html: { autocomplete: "email", class: 'form-control margin-bottom-20' }%>              
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+        <div class="row">
+          <div class="col-sm-6">
+            <label>Password <span class="color-red">*</span></label>
+            <%= f.input :password,
+                        required: true,
+                        label: false,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password", class: 'form-control margin-bottom-20' } %>                  
+          </div>
+          <div class="col-sm-6">
+            <label>Confirm Password <span class="color-red">*</span></label>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        label: false,
+                        input_html: { autocomplete: "new-password", class: 'form-control margin-bottom-20' } %>                  
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-lg-6 checkbox">
+            <label>
+              <input type="checkbox">
+              I read <a href="page_terms.html" class="color-green">Terms and Conditions</a>
+            </label>
+          </div>
+          <div class="col-lg-6 text-right">
+            <!-- <button class="btn-u" type="submit">Register</button> -->
+            <%= f.button :submit, "Register", class: 'btn-u' %>
+          </div>
+        </div>
+      <% end %>  
+      <%= render "devise/shared/links" %>            
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div><!--/container-->
+<!--=== End Content Part ===-->

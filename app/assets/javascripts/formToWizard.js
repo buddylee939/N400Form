@@ -14,15 +14,20 @@
         $(submmitButtonName).hide();
 
         // 2
-        $(element).before("<ul id='steps'></ul>");
+        // $(element).before("<ul class='nav nav-tabs'></ul>");
+        $(element).before("<ul id='steps'class='nav nav-tabs' ></ul>");
 
         steps.each(function(i) {
-            $(this).wrap("<div id='step" + i + "'></div>");
+            $(this).wrap("<div id='step" + i + "' class='tab-pane fade in active'></div>");
             $(this).append("<p id='step" + i + "commands'></p>");
 
             // 2
-            var name = $(this).find("legend").html();
-            $("#steps").append("<li id='stepDesc" + i + "'>Step " + (i + 1) + "<span>" + name + "</span></li>");
+            var name = $(this).find("header").html();
+            // var name = $(this).prev().text();
+            console.log(name);
+            // $("#steps").append("<li id='stepDesc" + i + "'>Step " + (i + 1) + "<span>" + name + "</span></li>");
+            var link = "<a href='#'>" + name + "</a>";
+            $("#steps").append("<li id='stepDesc" + i + "'>" + link + "</li>");
 
             if (i == 0) {
                 createNextButton(i);
@@ -41,7 +46,7 @@
 
         function createPrevButton(i) {
             var stepName = "step" + i;
-            $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Prev' class='prev'>< Back</a>");
+            $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Prev' class='prev btn-u btn-u-default'>< Back</a>");
 
             $("#" + stepName + "Prev").bind("click", function(e) {
                 $("#" + stepName).hide();
@@ -53,7 +58,7 @@
 
         function createNextButton(i) {
             var stepName = "step" + i;
-            $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Next' class='next'>Next ></a>");
+            $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Next' class='next btn-u'>Next ></a>");
 
             $("#" + stepName + "Next").bind("click", function(e) {
                 $("#" + stepName).hide();
@@ -65,8 +70,10 @@
         }
 
         function selectStep(i) {
-            $("#steps li").removeClass("current");
-            $("#stepDesc" + i).addClass("current");
+            // $("#steps li").removeClass("current");
+            // $("#stepDesc" + i).addClass("current");
+            $("#steps li").removeClass("active");
+            $("#stepDesc" + i).addClass("active");
         }
 
     }

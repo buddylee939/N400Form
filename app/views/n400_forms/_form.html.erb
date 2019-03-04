@@ -2,35 +2,36 @@
 <%= simple_form_for(@n400_form, html: { id: 'SignupForm' }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+	
+	
+		<fieldsets>
+		<header>Information About Your Eligibility</header>
+			<%=  render 'step1', f: f %>
+		</fieldsets>
 
-	<fieldsets>
-		<legend> Information About Your Eligibility</legend>
-		<%=  render 'step1', f: f %>
-	</fieldsets>
+		<fieldsets>
+			<header>Information About You</header>
+			<%#=  render 'step2', f: f %>
+		</fieldsets>
 
-	<fieldsets>
-		<legend> Information About You</legend>
-		<%=  render 'step2', f: f %>
-	</fieldsets>
+		<fieldsets>
+			<header>Accommodations for Individuals With Disabilities and/or Impairments</header>
+			<%#=  render 'step3', f: f %>
+		</fieldsets>
 
-	<fieldsets>
-		<legend> Accommodations for Individuals With Disabilities and/or Impairments</legend>
-		<%=  render 'step3', f: f %>
-	</fieldsets>
+		<fieldsets>
+			<header>Information to Contact You</header>
+			<%#=  render 'step4', f: f %>
+		</fieldsets>
 
-	<fieldsets>
-		<legend> Information to Contact You</legend>
-		<%=  render 'step4', f: f %>
-	</fieldsets>
+		<fieldsets>
+			<header>Information About Your Residence</header>
+			<%#=  render 'step5', f: f %>
+		</fieldsets>
 
-	<fieldsets>
-		<legend> Information About Your Residence</legend>
-		<%=  render 'step5', f: f %>
-	</fieldsets>
-
-  <div class="form-actions">
-    <%= f.button :submit, id: 'SaveAccount', class: 'btn btn-primary btn-lg' %>
-  </div>
+	  <div class="form-actions">
+	    <%#= f.button :submit, id: 'SaveAccount', class: 'btn btn-primary btn-lg' %>
+	  </div>
+	
 <% end %>
-
 

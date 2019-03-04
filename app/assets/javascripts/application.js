@@ -11,11 +11,21 @@
 // about supported directives.
 //
 //= require jquery
+// require plugins/jquery-migrate
 //= require rails-ujs
 //= require cocoon
 //= require bootstrap-sprockets
+// require gritter
 //= require formToWizard
+//= require plugins/back-to-top
+//= require plugins/smoothScroll
+//= require plugins/modernizr
+//= require plugins/jquery.parallax
+//= require plugins/fancybox/source/jquery.fancybox.pack
+//= require custom
+//= require app
 //= require n400
+//= require fancy-box
 //= require main
 //= require activestorage
 // require turbolinks
