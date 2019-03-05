@@ -1,14 +1,15 @@
-<p>1. Are you requesting an accommodation because of your disabilities and/or impairments?</p>
-<%= f.input :disability_accomodation, as: :radio_buttons, collection: N400Form::YES_OR_NO %>
+<p><strong>NOTE: Read the information in the Form N-400 Instructions before completing this part.</strong></p>
+<h6>1. Are you requesting an accommodation because of your disabilities and/or impairments?</h6>
+<%= f.input :disability_accomodation, as: :radio_buttons, collection: N400Form::YES_OR_NO, label: false %>
 
 <div id="disability-accomodations">	
 	<p>If you answered "Yes," select any applicable box.</p>
 	<%= f.input :hard_of_hearing, label: 'I am deaf or hard of hearing and request the following accommodation. (If you are requesting a sign-language interpreter, indicate for which language (for example, American Sign Language).)' %>
-	<%= f.input :hard_of_hearing_reason %>
+	<%= f.input :hard_of_hearing_reason, label: false %>
 	<%= f.input :low_vision, label: 'I am blind or have low vision and request the following accommodation:' %>
-	<%= f.input :low_vision_reason %>
+	<%= f.input :low_vision_reason, label: false %>
 	<%= f.input :another_disability, label: 'I have another type of disability and/or impairment (for example, use a wheelchair). (Describe the nature of your disability and/or impairment and the accommodation you are requesting.)' %>
-	<%= f.input :another_disability_reason %>
+	<%= f.input :another_disability_reason, label: false %>
 </div>
 
 

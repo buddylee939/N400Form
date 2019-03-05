@@ -1,6 +1,7 @@
+<h6>1. Enter Your 9 Digit A-Number:</h6>
+<%= f.input :nine_digit_a_number, placeholder: '123456789', label: false %>
 
-<%= f.input :nine_digit_a_number, placeholder: '123456789' %>
-
+<h6>2. You are at least 18 years of age and:</h6>
 <%= f.input :eligibility, as: :radio_buttons, collection: N400Form::ELIGIBILITY, wrapper_html: { id: 'eligibile' } %>
 
 <%= f.input :field_office_id, collection: FieldOffice.all, 
@@ -12,16 +13,3 @@
 	wrapper_html: { id: 'other-explain' }
  %>	
 
-<!-- <form>
-<p id="myRadios">
-    <label><input type="radio" name="myRadio" value="radio1">Radio 1</label>
-    <label><input type="radio" name="myRadio" value="radio2">Radio 2</label>
-    <label><input type="radio" name="myRadio" value="radio3">Radio 3</label>
-</p>
-<div id="infoForAllButLast">
-<p>This is some information for all but the last option.</p>
-</div>
-<div id="infoForFirstTwo">
-<p>This is some information for the first two options.</p>
-</div>
-</form> -->

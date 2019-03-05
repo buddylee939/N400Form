@@ -1,37 +1,42 @@
 
-<%= simple_form_for(@n400_form, html: { id: 'SignupForm' }) do |f| %>
+<%= simple_form_for(@n400_form, html: { id: 'SignupForm' }, wrapper_mappings: {
+    check_boxes:    :vertical_collection,
+    radio_buttons:  :vertical_collection,
+    file:           :custom_file,
+    boolean:        :custom_boolean_switch,
+    select:         :custom_multi_select
+  }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 	
 	
 		<fieldsets>
-		<header>Information About Your Eligibility</header>
+		<legend>Information About Your Eligibility</legend>
 			<%=  render 'step1', f: f %>
 		</fieldsets>
 
 		<fieldsets>
-			<header>Information About You</header>
+			<legend>Information About You</legend>
 			<%=  render 'step2', f: f %>
 		</fieldsets>
 
 		<fieldsets>
-			<header>Accommodations for Individuals With Disabilities and/or Impairments</header>
+			<legend>Accommodations for Individuals With Disabilities and/or Impairments</legend>
 			<%=  render 'step3', f: f %>
 		</fieldsets>
 
 		<fieldsets>
-			<header>Information to Contact You</header>
+			<legend>Information to Contact You</legend>
 			<%=  render 'step4', f: f %>
 		</fieldsets>
 
 		<fieldsets>
-			<header>Information About Your Residence</header>
+			<legend>Information About Your Residence</legend>
 			<%=  render 'step5', f: f %>
 		</fieldsets>
 
 	  <div class="form-actions">
-	    <%= f.button :submit, id: 'SaveAccount', class: 'btn btn-primary btn-lg' %>
+	    <%= f.button :submit, id: 'SaveAccount', class: 'btn btn-primary btn-lg' %> <br>
 	  </div>
 	
 <% end %>
-

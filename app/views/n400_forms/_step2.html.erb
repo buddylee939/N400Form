@@ -1,46 +1,84 @@
-<p>1. Your Current Legal Name (do not provide a nickname)</p>
-<%= f.input :legal_last_name %>
-<%= f.input :legal_first_name %>
-<%= f.input :legal_middle_name %>
-<p>2. Your Name Exactly As It Appears on Your Permanent Resident Card (if applicable)</p>
-<%= f.input :resident_last_name %>
-<%= f.input :resident_first_name %>
-<%= f.input :resident_middle_name %>
-<p>3. Other Names You Have Used Since Birth (include nicknames, aliases, and maiden name, if applicable)</p>
-<h3>Other Names</h3>
+<h6>1. Your Current Legal Name (do not provide a nickname)</h6>
+<%= f.input :legal_last_name, label: 'Family Name (Last Name)' %>
+<%= f.input :legal_first_name, label: 'Given Name (First Name)' %>
+<%= f.input :legal_middle_name, label: 'Middle Name (if applicable)' %>
+<hr>
+
+<h6>2. Your Name Exactly As It Appears on Your Permanent Resident Card (if applicable)</h6>
+<%= f.input :resident_last_name, label: 'Family Name (Last Name)' %>
+<%= f.input :resident_first_name, label: 'Given Name (First Name)' %>
+<%= f.input :resident_middle_name, label: 'Middle Name (if applicable)' %>
+<hr>
+
+<h6>3. Other Names You Have Used Since Birth (include nicknames, aliases, and maiden name, if applicable)</h6>
 <div id="other_names">
 	<%= f.simple_fields_for :other_names do |other_name| %>
 		<%=  render 'other_name_fields', f: other_name %>
 	<% end %>
 	<div class="links">
-		<%= link_to_add_association 'add other name', f, :other_names %>
+		<%= link_to_add_association 'add other name', f, :other_names, class: 'btn btn-light' %>
 	</div>
 </div>
+<hr>
 
-<p>4. Name Change (Optional)</p>
-<%= f.input :name_change, as: :radio_buttons, collection: N400Form::YES_OR_NO %>
+<h6>4. Name Change (Optional)</h6>
+<p><strong>Read the Form N-400 Instructions before you decide whether or not you would like to legally change your name.
+</strong></p>
+<%= f.input :name_change, as: :radio_buttons, collection: N400Form::YES_OR_NO, label: 'Would you like to legally change your name?' %>
 <div id="name-change-fields">
-	<%= f.input :new_last_name %>
-	<%= f.input :new_first_name %>
-	<%= f.input :new_middle_name %>	
+	<p>If you answered ''Yes," type or print the new name you would like to use in the spaces provided below.</p>
+	<%= f.input :new_last_name, label: 'Family Name (Last Name)' %>
+	<%= f.input :new_first_name, label: 'Given Name (First Name)' %>
+	<%= f.input :new_middle_name, label: 'Middle Name (if applicable)' %>	
 </div>
+<hr>
 
-<%= f.input :social_security_num %>
-<%= f.input :uscis_num %>
-<%= f.input :gender, as: :radio_buttons, collection: N400Form::GENDER %>
+<h6>5. U.S. Social Security Number (if applicable)</h6>
+<%= f.input :social_security_num, placeholder: '123-45-6789', label: false %>
+<hr>
+<h6>6. USCIS Online Account Number (if any)</h6>
+<%= f.input :uscis_num, label: false %>
+<hr>
+
+<h6>7. Gender</h6>
+<%= f.input :gender, as: :radio_buttons, collection: N400Form::GENDER, label: false %>
+<hr>
+
+<h6>8. Date of Birth</h6>
 <%= f.input :date_of_birth, start_year: Date.today.year - 100,
-                              end_year: Date.today.year %>
-<%= f.input :date_of_residency, start_year: Date.today.year - 40,
-                              end_year: Date.today.year %>
+                              end_year: Date.today.year, label: false %>
+<hr>
 
-<p>Country of Birth</p>
-<%= f.country_select :country_of_birth,  
-	include_blank: "Please select a Country" %>
-<p>Country of Citizenship or Nationality</p>
-<%= f.country_select :country_of_citizendship,  
-	include_blank: "Please select a Country" %>
-<%= f.input :physical_disability, as: :radio_buttons, collection: N400Form::YES_OR_NO %>
+<h6>9. Date You Became a Lawful Permanent Resident (mm/dd/yyyy)</h6>
+<%= f.input :date_of_residency, start_year: Date.today.year - 40,
+                              end_year: Date.today.year, label: false %>
+<hr>
+
+
+<h6>10. Country of Birth</h6>
+<%= f.input :country_of_birth,  
+	include_blank: "Please select a Country", label: false %>
+<hr>
+
+<h6>11. Country of Citizenship or Nationality</h6>
+<%= f.input :country_of_citizendship,  
+	include_blank: "Please select a Country", label: false %>
+<hr>
+
+<h6>12. Do you have a physical or developmental disability or mental impairment that prevents you from demonstrating your knowledge and understanding of the English language and/or civics requirements for naturalization?</h6>
+<%= f.input :physical_disability, as: :radio_buttons, collection: N400Form::YES_OR_NO, label: false %>
+
 <p>If you answered "Yes," submit a completed Form N-648, Medical Certification for Disability Exceptions, when you file your Form N-400.</p>
+<hr>
+
+<h6>13. Exemptions from the English Language Test</h6>
+<p>A. Are you 50 years of age or older and have you lived in the United States as a lawful permanent
+resident for periods totaling at least 20 years at the time you file your Form N-400?</p>
 <%= f.input :years_or_older_50, as: :radio_buttons, collection: N400Form::YES_OR_NO %>
+
+<p>B. Are you 55 years of age or older and have you lived in the United States as a lawful permanent
+resident for periods totaling at least 15 years at the time you file your Form N-400?</p>
 <%= f.input :years_or_older_55, as: :radio_buttons, collection: N400Form::YES_OR_NO %>
+
+<p>C. Are you 65 years of age or older and have you lived in the United States as a lawful permanent resident for periods totaling at least 20 years at the time you file your Form N-400? (If you meet this requirement, you will also be given a simplified version of the civics test.)</p>
 <%= f.input :years_or_older_65, as: :radio_buttons, collection: N400Form::YES_OR_NO %>

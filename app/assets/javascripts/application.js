@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require popper
 // require plugins/jquery-migrate
 //= require rails-ujs
 //= require cocoon

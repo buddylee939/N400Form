@@ -1,1 +1,86 @@
 
+body.header-fixed-space {
+  padding-top: 0;
+}
+body.header-fixed-space-v2 {
+  padding-top: 0;
+}
+
+@media (max-width: 991px) {
+  body.header-fixed-space,
+  body.header-fixed-space-v2 {
+    padding-top: 0;
+  }
+}
+
+.navbar-brand img {
+  height: 102px;
+  max-height: 102px;
+  line-height: 60px;
+}
+
+.bg-light {
+  margin-bottom: 0; 
+}
+
+.nav-link {
+  font-size: 1.3em;
+}
+
+.interactive-slider-v2 h1 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 80px;
+    text-transform: uppercase;
+}
+
+.interactive-slider-v2 p {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 200;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+.footer-logo {
+  max-width: 100px;
+}
+
+.notice {
+  background: lightgreen;
+  padding: 15px;   
+  font-size: 15px; 
+}
+
+.alert {
+  background: tomato;
+  padding: 15px;    
+  color: white;
+  font-size: 15px;
+}
+
+.sky-form .row {
+    margin: 0 0;
+}
+
+.sky-form fieldsets {
+    display: block;
+    padding: 25px 30px 5px;
+    border: none;
+    background: rgba(255,255,255,.9);
+}
+
+.my-form {
+  padding: 40px 0;
+}
+
+.current {
+  background: #eee;
+  padding: 10px;
+}
+
+legend {
+  border-bottom: 1px solid;
+  margin-bottom: 30px;
+}
+  

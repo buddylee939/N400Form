@@ -1,7 +1,8 @@
 <div class="nested-fields">
-	<%= f.input :family_name %>
-	<%= f.input :given_name %>
-	<%= f.input :middle_name %>
-	<%= link_to_remove_association 'remove name', f %>
+	<%= f.input :family_name, label: 'Family Name (Last Name)' %>
+	<%= f.input :given_name, label: 'Given Name (First Name)' %>
+	<%= f.input :middle_name, label: 'Middle Name (if applicable)' %>
+	<%= link_to_remove_association 'remove name', f, class: 'btn btn-warning' %>
+  <hr>
 </div>
 
