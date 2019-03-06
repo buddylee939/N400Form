@@ -67,21 +67,21 @@
 	- can search username from form
 	- can't create themselves, only admin can create	
 
-## things learnt to try
-
-- nested forms, to add addresses etc
-- kaminari/will paginate
-- how to add dynamic form elements based on when the user clicks something or not
-- how to make a checkbox act like a radio button group with jquery, [click here](https://www.codexworld.com/how-to/allow-only-one-checkbox-to-be-checked-jquery/)
-- [using sti](https://vsmedia.co.uk/single-table-inheritance-sti-devise/)
-- STI from jordan professional rails
-- simple search like in admin blog site
 
 ## Todos
 
-- add 'active' class to bootstrap nav, jordan shows how
-- growl notifications
+X how to add dynamic form elements based on when the user clicks something or not
+X add 'active' class to bootstrap nav, jordan shows how
+X how to make a checkbox act like a radio button group with jquery, [click here](https://www.codexworld.com/how-to/allow-only-one-checkbox-to-be-checked-jquery/)
+
+X in the user dashboard, show the status of the form, pending/checked/approved/rejected
+- create the manager/admin roles with sti or petergate
+- [using sti](https://vsmedia.co.uk/single-table-inheritance-sti-devise/)
+- STI from jordan professional rails
+- kaminari/will paginate to manager/admin dashboards
+- simple search like in admin blog site
 - field offices CRUD only admin/manager authentication
+- growl notifications
 
 
 

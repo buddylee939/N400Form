@@ -4,6 +4,8 @@ class N400Form < ApplicationRecord
   serialize :gender, JSON
   serialize :yes_or_no, JSON
 
+  enum status: { pending: 0, checked: 1, approved: 2, rejected: 3 }
+
   belongs_to :user
   validates :nine_digit_a_number, presence: true, length: { maximum: 9 }
   validates :social_security_num, presence: true, length: { maximum: 9 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_01_082529) do
+ActiveRecord::Schema.define(version: 2019_03_06_002227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_082529) do
     t.date "mailing_address_date_from"
     t.date "mailing_address_date_to"
     t.boolean "mailing_physical_address"
+    t.integer "status", default: 0
     t.index ["user_id"], name: "index_n400_forms_on_user_id"
   end
 

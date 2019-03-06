@@ -2,6 +2,7 @@
   <h1>Welcome</h1>
   <% if @n400_form %>
     <%= link_to " #{current_user.username}'s N400 Form", n400_form_path(@n400_form) %>  
+    <%= status_label @n400_form.status %>
   <% else %>
     <p><%= link_to "New N400 form", new_n400_form_path %></p>
   <% end %>
