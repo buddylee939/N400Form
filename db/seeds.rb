@@ -6,9 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(email: 'buddylee939@hotmail.com', password: 'asdfasdf', password_confirmation: 'asdfasdf')
+User.create!(email: 'user@example.com', password: 'asdfasdf', password_confirmation: 'asdfasdf')
+User.create!(email: 'admin@example.com', password: 'asdfasdf', password_confirmation: 'asdfasdf', roles: 'site_admin')
+User.create!(email: 'manager@example.com', password: 'asdfasdf', password_confirmation: 'asdfasdf', roles: 'site_manager')
 
 puts '1 user created'
+puts '1 admin created'
+puts '1 manager created'
 
 states = ['Alaska', 'Arizona', 'California', 'Florida', 'Delaware']
 

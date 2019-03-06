@@ -75,9 +75,10 @@ X add 'active' class to bootstrap nav, jordan shows how
 X how to make a checkbox act like a radio button group with jquery, [click here](https://www.codexworld.com/how-to/allow-only-one-checkbox-to-be-checked-jquery/)
 
 X in the user dashboard, show the status of the form, pending/checked/approved/rejected
-- create the manager/admin roles with sti or petergate
-- [using sti](https://vsmedia.co.uk/single-table-inheritance-sti-devise/)
-- STI from jordan professional rails
+X create the manager/admin roles with sti or petergate
+X created site admin and site manager user in seeds
+X field offices controller, only access by admin and managers
+- style admin dashboard with another layout
 - kaminari/will paginate to manager/admin dashboards
 - simple search like in admin blog site
 - field offices CRUD only admin/manager authentication
