@@ -78,8 +78,12 @@ X in the user dashboard, show the status of the form, pending/checked/approved/r
 X create the manager/admin roles with sti or petergate
 X created site admin and site manager user in seeds
 X field offices controller, only access by admin and managers
-- style admin dashboard with another layout
+X style admin dashboard with another layout
+X change background on admin/dashboard/users user admin manager to different colors via the helper
 - kaminari/will paginate to manager/admin dashboards
+- add the ability to convert user to manager or admin from the admin/dashboard/users table
+- add the forms dropdown to see the forms available
+- see a table of the forms admin approved/rejected
 - simple search like in admin blog site
 - field offices CRUD only admin/manager authentication
 - growl notifications

@@ -14,12 +14,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
-    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
     <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
   
   </head>
-
-     <%= yield %>
+    
+  <body>
+    <%= render 'shared/admin_header' %>
+    <main class="container-fluid px-0 g-pt-65">
+      <div class="row no-gutters g-pos-rel g-overflow-x-hidden">    
+        <%= render 'shared/admin_sidebar' %>
+        <%= yield %>
+      </div>
+    </main>      
+  </body>
 
 </html>

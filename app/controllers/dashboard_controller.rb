@@ -7,4 +7,7 @@ class DashboardController < ApplicationController
     end
     @n400_form = N400Form.where(user_id: current_user.id).first
   end
+
+  def admin_dashboard
+  end
 end

@@ -1,0 +1,44 @@
+
+<div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
+  <div class="g-pa-20">
+    <h1>N400 Forms</h1>
+    <div class="row">
+
+      <!-- Income Card -->
+      <div class="col-xl-12">
+
+        <!-- Income Cards -->
+        <div class="card g-brd-gray-light-v7 g-mb-30">
+          <div class="js-custom-scroll g-height-500 g-pa-15 g-pa-0-30-25--md">
+            <table class="table table-responsive-sm w-100">
+              <thead>
+                <tr>
+                  <th class="g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none g-pl-20">#</th>
+                  <th class="g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Email</th>
+                  <th class="g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Status</th>
+                  <th class="g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Date</th>
+                  <th class="g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Change Role</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @n400_forms.each_with_index do |f, index| %>
+                  <tr>
+                    <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20"><%= index + 1 %></td>   
+                    <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10"><%= link_to f.user.email, f%></td>
+                    <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">
+                      <%= status_label f.status %> 
+                    </td>  
+                    <td class="g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10"><%= f.created_at.strftime("%b %d, %Y") %></td>
+                    <td></td>                                        
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- End Income Cards -->
+      </div>
+      <!-- End Income Card -->
+    </div>
+  </div>
+</div>
