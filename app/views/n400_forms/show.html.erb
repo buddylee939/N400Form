@@ -195,12 +195,19 @@
         <%= link_to 'Edit', edit_n400_form_path(@n400_form), class: 'btn btn-success' %> |
       <% end %>
       <%= link_to 'Back', dashboard_path, class: 'btn btn-primary' %>
-      <% if logged_in?(:site_manager) %>      
-        | <%= link_to "Change Status", toggle_status_n400_form_path(@n400_form), class: 'btn btn-info' %>                          
+      <% if logged_in?(:site_manager) %>
+        <% if @n400_form.status == 'pending' %>      
+          | <%= link_to "Change to Checked", toggle_status_n400_form_path(@n400_form), class: 'btn btn-info' %>                          
+        <% else %>
+          | <%= link_to "Change to Pending", toggle_status_n400_form_path(@n400_form), class: 'btn btn-info' %>                          
+        <% end %>
       <% end %>
       <% if logged_in?(:site_admin) %> 
-        | <%= link_to "Approve", approve_status_n400_form_path(@n400_form), class: 'btn btn-info' %>                          
-        | <%= link_to "Reject", reject_status_n400_form_path(@n400_form), class: 'btn btn-secondary' %>                          
+        <% if @n400_form.status == 'approved'%>
+          | <%= link_to "Reject", reject_status_n400_form_path(@n400_form), class: 'btn btn-secondary' %>                          
+        <% else %>
+          | <%= link_to "Approve", approve_status_n400_form_path(@n400_form), class: 'btn btn-info' %>                          
+        <% end %>
       <% end %>      
     </div><!--/col-md-9-->
   </div><!--/row-->
