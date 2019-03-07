@@ -93,7 +93,8 @@ X admin: simple search like in admin blog site for emails
 X manager: simple search like in admin blog site for emails
 X phone media query for admin/manager dashboard
 X fix search to lowercase
-- seed app with fake data
+X add faker gem
+X seed app with fake data
 - get on heroku
 - seed on heroku with fake data
 

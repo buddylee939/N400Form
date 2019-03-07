@@ -27,7 +27,7 @@ puts '5 Field Offices created'
 
 20.times do |u|
   User.create!(
-    email: "user#{u}@example.com",
+    email: Faker::Internet.email,
     password: 'asdfasdf', 
     password_confirmation: 'asdfasdf'
   )
@@ -37,10 +37,28 @@ puts '20 users created'
 
 20.times do |f|
   N400Form.create!(
-    nine_digit_a_number: '321321321',
-    social_security_num: '123123123', 
+    nine_digit_a_number: Faker::Bank.account_number(9),
+    social_security_num: Faker::Bank.account_number(9), 
     user_id: f + 3, 
-    status: rand(0..3)
+    status: rand(0..3), 
+    eligibility: 'Have been a lawful permanent resident of the United States for at least 5 years.',
+    legal_last_name: Faker::Name.last_name,
+    legal_first_name: Faker::Name.first_name,
+    legal_middle_name: Faker::Name.middle_name, 
+    resident_last_name: Faker::Name.last_name, 
+    resident_first_name: Faker::Name.first_name,
+    resident_first_name: Faker::Name.middle_name,
+    gender: ["Female", "Male"].sample,
+    date_of_birth: Faker::Date.birthday(18, 80),
+    date_of_residency: Faker::Date.between(5.years.ago, 2.days.ago),
+    country_of_birth: Faker::Address.country,
+    phone_day: Faker::PhoneNumber.cell_phone, 
+    email_address: Faker::Internet.email,
+    physical_address_street_1: Faker::Address.street_address,
+    physical_address_street_2: Faker::Address.secondary_address,
+    physical_address_city: Faker::Address.city,
+    physical_address_state: Faker::Address.state,
+    physical_address_zip: Faker::Address.zip
   )
 end
 
