@@ -1,20 +1,32 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
-// @import "gritter";
 @import "external/app";
 @import "external/blocks";
 @import "external/style";
-// @import "external/header-v8";
 @import "external/footer-v8";
 @import "plugins/animate";
 @import "simple-line-icons";
 @import "plugins/parallax-slider/css/parallax-slider";
 @import "plugins/fancybox/source/jquery.fancybox";
-// @import "plugins/sky-forms-pro/skyforms/css/sky-forms";
-// @import "plugins/sky-forms-pro/skyforms/custom/custom-sky-forms";
 @import "external/default";
 @import "external/dark";
 @import "external/custom";
 @import "font-awesome";
 @import "simple_form-bootstrap/simple_form-bootstrap";
+@import "admin/unify-admin";
 @import "n400_forms";
+
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+}
+
+.lists-v1 li a {
+  font-size: 1.3em;
+  margin-right: 40px;
+}
+
+.panel-body p {
+  font-size: 1.2em;
+}

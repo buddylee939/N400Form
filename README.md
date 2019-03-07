@@ -80,13 +80,22 @@ X created site admin and site manager user in seeds
 X field offices controller, only access by admin and managers
 X style admin dashboard with another layout
 X change background on admin/dashboard/users user admin manager to different colors via the helper
-- kaminari/will paginate to manager/admin dashboards
-- add the ability to convert user to manager or admin from the admin/dashboard/users table
-- add the forms dropdown to see the forms available
-- see a table of the forms admin approved/rejected
-- simple search like in admin blog site
-- field offices CRUD only admin/manager authentication
-- growl notifications
+X kaminari/will paginate to manager/admin dashboards
+X see a table of the forms admin approved/rejected
+X user: fix user dashboard
+X user: fix user form show
+X user: fix back link, and routes during CRUD
+X manager: dashboard users email not links
+X manager: dashboard forms click to form show, can't see edit, back link goes to redirect back, should see a status badge
+X manager: add change pending to checked in form show view
+X manager: users email not links
+X admin: simple search like in admin blog site for emails
+X manager: simple search like in admin blog site for emails
+X phone media query for admin/manager dashboard
+X fix search to lowercase
+- seed app with fake data
+- get on heroku
+- seed on heroku with fake data
 
 
 

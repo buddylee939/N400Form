@@ -1,16 +1,208 @@
-<div class="container">
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+  <div class="container">
+    <h1 class="pull-left">N400 Forms</h1>
+  </div>
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
 
-  <p>
-    <strong>A Number</strong>
-    <%= @n400_form.nine_digit_a_number %>
-  </p>
-  <p>
-    <strong>Eligitility:</strong>
-    <%= @n400_form.eligibility %>
-  </p>
-
-  <%= link_to 'Edit', edit_n400_form_path(@n400_form) %> |
-  <%= link_to 'Back', n400_forms_path %>
-  
-
-</div>
+<!--=== Content Part ===-->
+<div class="container content">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- General Questions -->
+      <div class="headline"><h2>Information About Your Eligibility</h2></div>
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              1. Your 9 Digit A-Number
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p><%= @n400_form.nine_digit_a_number %></p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              2. You are at least 18 years of age and:
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p><%= @n400_form.eligibility %></p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->                    
+      <!-- End General Questions -->
+      <!-- General Questions -->
+      <div class="headline"><h2>Information About You</h2></div>
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              1. Your Current Legal Name (do not provide a nickname)
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p>
+              <%= "#{@n400_form.legal_last_name}, #{@n400_form.legal_first_name} #{@n400_form.legal_middle_name}" %>
+            </p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              2. Your Name Exactly As It Appears on Your Permanent Resident Card (if applicable)
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p>
+              <%= "#{@n400_form.resident_last_name}, #{@n400_form.resident_first_name} #{@n400_form.resident_middle_name}" %>
+            </p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->             
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              5. U.S. Social Security Number (if applicable)
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p>
+              <%= @n400_form.social_security_num %>
+            </p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->    
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              7. Gender
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p>
+              <%= @n400_form.gender %>
+            </p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->        
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              8. Date of Birth
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p>
+              <%= @n400_form.date_of_birth %>
+            </p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->      
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              9. Date You Became a Lawful Permanent Resident
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p>
+              <%= @n400_form.date_of_residency %>
+            </p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->     
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              10. Country of Birth
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p>
+              <%= @n400_form.country_of_birth %>
+            </p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->                                                    
+      <!-- End General Questions -->   
+      <div class="headline"><h2>Information to Contact You</h2></div>
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              1. Daytime Telephone Number
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p><%= @n400_form.phone_day %></p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              4. Mobile Telephone Number (if any)
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p><%= @n400_form.phone_mobile %></p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              5. Email Address (if any)
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p><%= @n400_form.email_address %></p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->     
+      <div class="headline"><h2>Information About Your Residence</h2></div>
+      <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              1. Where have you lived during the last five years?
+            </h4>
+          </div>              
+          <div class="panel-body">
+            <p><%= @n400_form.physical_address_street_1 %></p>
+            <p><%= @n400_form.physical_address_street_2 %></p>
+            <p><%= "#{@n400_form.physical_address_city}, #{@n400_form.physical_address_state} #{@n400_form.physical_address_zip}" %></p>
+          </div>              
+        </div>
+      </div><!--/acc-v1-->     
+      <%= status_label @n400_form.status %>
+      <% if current_user.id == @n400_form.user_id %>
+        <%= link_to 'Edit', edit_n400_form_path(@n400_form), class: 'btn btn-success' %> |
+      <% end %>
+      <%= link_to 'Back', dashboard_path, class: 'btn btn-primary' %>
+      <% if logged_in?(:site_manager) %>      
+        | <%= link_to "Change Status", toggle_status_n400_form_path(@n400_form), class: 'btn btn-info' %>                          
+      <% end %>
+      <% if logged_in?(:site_admin) %> 
+        | <%= link_to "Approve", approve_status_n400_form_path(@n400_form), class: 'btn btn-info' %>                          
+        | <%= link_to "Reject", reject_status_n400_form_path(@n400_form), class: 'btn btn-secondary' %>                          
+      <% end %>      
+    </div><!--/col-md-9-->
+  </div><!--/row-->
+</div><!--/container-->
+<!--=== End Content Part ===-->

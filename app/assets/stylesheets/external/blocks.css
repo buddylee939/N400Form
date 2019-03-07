@@ -249,7 +249,7 @@
   overflow: hidden;
   padding: 10px 0 6px;
   border-bottom: solid 1px #eee;
-  background: url(../img/patterns/breadcrumbs.png) repeat;
+  background: image-url("breadcrumbs.png") repeat;
 }
 
 .video-business-img1 {
@@ -457,7 +457,8 @@
 }
 
 .breadcrumbs-v3.img-v3 {
-  background: url(../img/breadcrumbs/img3.jpg) no-repeat;
+  /*background: url(../img/breadcrumbs/img3.jpg) no-repeat;*/
+  background: image-url("bg-img3.jpg") no-repeat;
   background-size: cover;
   background-position: center center;
 }

@@ -27,7 +27,10 @@
         <%= render 'shared/admin_sidebar' %>
         <%= yield %>
       </div>
-    </main>      
+    </main>    
+
+    <%= javascript_include_tag 'admin/application', 'data-turbolinks-track': 'reload' %>    
+
   </body>
 
 </html>

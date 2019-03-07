@@ -7,7 +7,7 @@
       <div class="col-xl-12">
         <!-- Income Cards -->
         <div class="card g-brd-gray-light-v7 g-mb-30">
-          <div class="js-custom-scroll g-height-500 g-pa-15 g-pa-0-30-25--md">
+          <div class="">
             <table class="table table-responsive-sm w-100">
               <thead>
                 <tr>
@@ -22,7 +22,9 @@
                 <% @users.each_with_index do |u, index| %>
                   <tr>
                     <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20"><%= index + 1 %></td>   
-                    <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10"><%= link_to u.email, edit_user_registration_path(u) %></td>
+                    <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">
+                      <%= u.email %>
+                    </td>
                     <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">
                       <%= role_converter u.role %> 
                     </td>  
@@ -38,5 +40,8 @@
       </div>
       <!-- End Income Card -->
     </div>
+    <div class="row justify-content-md-center">
+      <%= paginate @users %>
+    </div>    
   </div>
 </div>

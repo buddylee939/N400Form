@@ -1,5 +1,5 @@
 class N400FormsController < ApplicationController
-  before_action :set_n400_form, only: [:show, :edit, :update, :destroy]
+  before_action :set_n400_form, only: [:show, :edit, :update, :destroy, :toggle_status, :approve_status, :reject_status]
   before_action :authenticate_user!
   # GET /n400_forms
   # GET /n400_forms.json
@@ -59,6 +59,28 @@ class N400FormsController < ApplicationController
       format.html { redirect_to n400_forms_url, notice: 'N400 form was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def toggle_status
+    if @n400_form.pending?
+      @n400_form.checked!
+    elsif @n400_form.checked?
+      @n400_form.pending!
+    end
+    flash[:notice] = 'Status has been updated'
+    redirect_back(fallback_location: root_path)
+  end  
+
+  def approve_status
+    @n400_form.approved!
+    flash[:notice] = 'Status has been updated'
+    redirect_back(fallback_location: root_path)    
+  end
+
+  def reject_status
+    @n400_form.rejected!
+    flash[:notice] = 'Status has been updated'
+    redirect_back(fallback_location: root_path)    
   end
 
   private
