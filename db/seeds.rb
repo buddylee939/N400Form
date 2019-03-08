@@ -29,7 +29,8 @@ puts '5 Field Offices created'
   User.create!(
     email: Faker::Internet.email,
     password: 'asdfasdf', 
-    password_confirmation: 'asdfasdf'
+    password_confirmation: 'asdfasdf', 
+    created_at: Faker::Date.between(5.years.ago, 2.days.ago)
   )
 end
 
@@ -47,7 +48,7 @@ puts '20 users created'
     legal_middle_name: Faker::Name.middle_name, 
     resident_last_name: Faker::Name.last_name, 
     resident_first_name: Faker::Name.first_name,
-    resident_first_name: Faker::Name.middle_name,
+    resident_middle_name: Faker::Name.middle_name,
     gender: ["Female", "Male"].sample,
     date_of_birth: Faker::Date.birthday(18, 80),
     date_of_residency: Faker::Date.between(5.years.ago, 2.days.ago),
@@ -58,7 +59,8 @@ puts '20 users created'
     physical_address_street_2: Faker::Address.secondary_address,
     physical_address_city: Faker::Address.city,
     physical_address_state: Faker::Address.state,
-    physical_address_zip: Faker::Address.zip
+    physical_address_zip: Faker::Address.zip, 
+    created_at: Faker::Date.between(5.years.ago, 2.days.ago)
   )
 end
 
